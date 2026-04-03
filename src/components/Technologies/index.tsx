@@ -9,6 +9,7 @@ import { GoDatabase } from "react-icons/go";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoReact } from "react-icons/io5";
 import { RiNextjsFill } from "react-icons/ri";
+import SectionTitle from "../SectionTitle";
 
 export default function Technologies() {
   const technologies = [
@@ -52,7 +53,7 @@ export default function Technologies() {
 
   return (
     <section className="bg-background-light w-full min-h-[45vh] py-10 px-15">
-      <h2 className="text-center text-4xl font-medium mb-10">Tecnologias</h2>
+      <SectionTitle title="Tecnologias"/>
 
       <ul className='grid grid-cols-3 p-2 flex-wrap gap-5 text-sm'>
 
@@ -63,7 +64,7 @@ export default function Technologies() {
           >
             {technology.icon}
 
-            <p className="text-lg">{technology.name}</p>
+            <p className="text-sm md:text-lg">{technology.name}</p>
           </li>
         ))}
       </ul>

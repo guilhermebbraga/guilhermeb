@@ -4,6 +4,7 @@ import { LuQrCode } from "react-icons/lu";
 
 import Link from "next/link";
 import React from "react";
+import SectionTitle from "../SectionTitle";
 
 export default function Contact() {
   const socialData: {
@@ -34,9 +35,10 @@ export default function Contact() {
 
   return (
     <section className="w-full min-h-[45vh] py-10 px-15">
-      <h2 className="text-center text-4xl mb-10">Entre em contato</h2>
 
-      <div className="flex justify-center gap-5">
+      <SectionTitle title='Entre em contato' />
+      
+      <div className="flex justify-center items-center">
         <div
           className="
           flex flex-col gap-5 w-fit p-5 rounded-custom bg-background-dark
@@ -60,17 +62,6 @@ export default function Contact() {
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="grid place-items-center">
-          <p className="text-sm text-text-muted">Ou</p>
-        </div>
-
-        <div
-          className="flex flex-col gap-5 w-fit p-5 rounded-custom bg-background-dark
-          border border-border-custom items-center justify-center"
-        >
-          <LuQrCode size="200" strokeWidth=".5" />
         </div>
       </div>
     </section>

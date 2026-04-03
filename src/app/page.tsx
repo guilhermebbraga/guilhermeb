@@ -10,10 +10,10 @@ import Technologies from "@/src/components/Technologies";
 export default function Home() {
   return (
     <main id="home">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <About />
-      <Projects />
+      <Projects title="Meus Projetos" link="/projetos" linkTitle='Ver todos os projetos'/>
       <Technologies />
       <Contact/>
       <Footer/>

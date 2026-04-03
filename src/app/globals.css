@@ -41,8 +41,8 @@
   --primary: hsl(86, 100%, 50%);
   --primary-hover: hsl(86, 100%, 34%);
 
-  --secondary: hsl(220, 28%, 51%);
-  --secondary-hover: hsl(220, 28%, 42%);
+  --secondary: hsl(261, 100%, 50%);
+  --secondary-hover: hsl(261, 100%, 42%);
 
   --radius-custom: 18px;
 }
@@ -87,4 +87,16 @@
     overflow: hidden;
   }
 
+  /* Esconde a barra de rolagem para Chrome, Safari e Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Esconde a barra de rolagem para IE, Edge e Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 }

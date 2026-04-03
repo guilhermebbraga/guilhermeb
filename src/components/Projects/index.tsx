@@ -1,13 +1,42 @@
+import Link from "next/link";
 import ProjectCard from "../ProjectCard";
+import { FaArrowRight } from "react-icons/fa6";
+import ProjectService from "@/src/services/sanityProjects";
+import { Project } from "@/src/interfaces/project.interface";
 
-export default function Projects() {
+interface ProjectsProps {
+  title?: string;
+  link?: string;
+  linkTitle?: string;
+}
+
+export default async function Projects({ title, link, linkTitle }: ProjectsProps) {
+
+  const projectService = new ProjectService()
+
+  const projects =  await projectService.getAllProjects()
+  
   return (
-    <section className="py-10 px-15">
-      <h1 className="text-3xl font-medium mb-10">Meus Projetos</h1>
+    <section className="py-10 px-7.5 md:px-15">
+      {title && (
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+          <h2 className="text-3xl font-medium">{title}</h2>
 
-      <ul className="grid grid-cols-3 gap-10">
-        {Array.from({ length: 6 }).map((a, i) => (
-          <ProjectCard key={i} />
+          {linkTitle && link && (
+            <Link
+              href={link}
+              className="flex items-center gap-1 text-primary hover:text-primary-hover"
+            >
+              <span>{linkTitle}</span>
+              <FaArrowRight />
+            </Link>
+          )}
+        </div>
+      )}
+
+      <ul className="grid md:grid-cols-3 gap-10">
+        {projects.map((project: Project, index: number) => (
+          <ProjectCard project={project} key={index} />
         ))}
       </ul>
     </section>
