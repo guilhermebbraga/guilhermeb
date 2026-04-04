@@ -1,12 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { MontserratFont } from "./fonts";
 import "./globals.css";
 import Footer from "../components/Layout/Footer";
 
+export const viewport: Viewport = {
+  themeColor: '#1a1a1a',
+}
+
 export const metadata: Metadata = {
-  title: "Guilherme Braga | Engenheiro de Software",
+  title: {
+    default: "Guilherme Braga | Engenheiro de Software",
+    template: "%s | Guilherme Braga"
+  },
   description: "Engenheiro de Software focado em Node.js, Next.js e Tailwind e experiências digitais de alta performance.",
-  keywords: ['Next.js', 'Software Engineer', 'Devloper', 'Desenvolvedor fullstack', 'Typescript', 'Node.js', 'São Bernardo do Campo'],
+  keywords: ['Next.js', 'Software Engineer', 'Developer', 'Desenvolvedor fullstack', 'Typescript', 'Node.js', 'São Bernardo do Campo'],
   icons: {
     icon: [
       { url: '/icon.png' },
@@ -23,13 +30,13 @@ export const metadata: Metadata = {
     },
     description: 'Engenheiro de Software focado em Node.js, Next.js e Tailwind e experiências digitais de alta performance.',
     url: 'https://guilhermeb.vercel.app/',
-    siteName: 'Clean Stack',
+    siteName: 'Guilherme Braga',
     images: [
       {
-        url: 'https://guilhermeb.vercel.app/logo-lg-dark.png',
+        url: 'https://guilhermeb.vercel.app/banner.png',
         width: 1200,
         height: 630,
-        alt: 'Clean Stack',
+        alt: 'Banner GB',
       },
     ],
     locale: 'pt_BR',
@@ -37,12 +44,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clean Stack',
+    title: 'Guilherme Braga',
     description: 'Engenheiro de Software focado em Node.js, Next.js e Tailwind e experiências digitais de alta performance.',
-    images: ['https://guilhermeb.vercel.app/logo-lg-dark.png'],
+    images: ['https://guilhermeb.vercel.app/banner.png'],
   },
   alternates: {
-    canonical: 'https://www.cleanstack.com.br',
+    canonical: 'https://guilhermeb.vercel.app/',
   },
   robots: {
     index: true,
