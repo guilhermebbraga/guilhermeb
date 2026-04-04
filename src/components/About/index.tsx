@@ -1,6 +1,7 @@
 export default function About() {
   return (
     <section
+        id="about"
         className="relative w-full min-h-[20vh] bg-background-light py-15 px-10 md:px-40"
         >
 

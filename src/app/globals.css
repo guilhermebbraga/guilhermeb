@@ -83,10 +83,6 @@
     scrollbar-color: var(--text) transparent;
   }
 
-  .noOverflow {
-    overflow: hidden;
-  }
-
   /* Esconde a barra de rolagem para Chrome, Safari e Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -100,3 +96,7 @@
     /* Firefox */
   }
 }
+
+.no-overflow {
+    overflow: hidden;
+  }

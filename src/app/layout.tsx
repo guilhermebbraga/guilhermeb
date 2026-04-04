@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Guilherme Braga | Portfólio",
-  description: "Engenheiro de Software em São Bernardo do Campo"
+  description: "Engenheiro de Software em São Bernardo do Campo",
 };
 
 export default function RootLayout({
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body
-        className={`${MontserratFont.variable} antialiased`}
-      >
+      <body id="home" className={`${MontserratFont.variable} antialiased relative`}>
         {children}
       </body>
     </html>

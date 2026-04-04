@@ -52,15 +52,17 @@ export default function Technologies() {
   ];
 
   return (
-    <section className="bg-background-light w-full min-h-[45vh] py-10 px-15">
-      <SectionTitle title="Tecnologias"/>
+    <section
+      id="technologies"
+      className="bg-background-light w-full min-h-[45vh] py-10 px-15"
+    >
+      <SectionTitle title="Tecnologias" />
 
-      <ul className='grid grid-cols-3 p-2 flex-wrap gap-5 text-sm'>
-
+      <ul className="grid grid-cols-3 p-2 flex-wrap gap-5 text-sm">
         {technologies.map((technology, index) => (
           <li
-          key={index}
-          className="min-w-20 h-20 flex items-center justify-center flex-col gap-2.5 text-3xl"
+            key={index}
+            className="min-w-20 h-20 flex items-center justify-center flex-col gap-2.5 text-3xl"
           >
             {technology.icon}
 

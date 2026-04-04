@@ -1,6 +1,5 @@
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
-import { LuQrCode } from "react-icons/lu";
 
 import Link from "next/link";
 import React from "react";
@@ -34,10 +33,9 @@ export default function Contact() {
   ];
 
   return (
-    <section className="w-full min-h-[45vh] py-10 px-15">
+    <section id="contact" className="w-full min-h-[45vh] py-10 px-15">
+      <SectionTitle title="Entre em contato" />
 
-      <SectionTitle title='Entre em contato' />
-      
       <div className="flex justify-center items-center">
         <div
           className="
