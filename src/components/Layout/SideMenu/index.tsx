@@ -9,7 +9,7 @@ interface SideMenuProps {
 }
 
 export default function SideMenu({ options }: SideMenuProps) {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (open) {
@@ -70,36 +70,3 @@ export default function SideMenu({ options }: SideMenuProps) {
   );
 }
 
-{
-  /* <aside
-      className={`relative md:hidden h-screen w-screen z-99999 ${open && "bg-black/60 backdrop-blur-sm"}`}
-    >
-      <div
-        className={`relative h-full p-5 ${open ? "bg-background-light w-65" : "bg-transparent w-20"}`}
-      >
-        <button
-          onClick={() => setOpen(!open)}
-          className="
-            border border-border-custom h-10 w-10 rounded-xl
-            cursor-pointer grid place-items-center absolute right-5
-            bg-background-dark/40 backdrop-blur-sm"
-        >
-          {!open ? <IoIosArrowForward /> : <IoIosArrowBack />}
-        </button>
-
-        <nav className={`mt-20 ${!open && "-translate-x-100"}`}>
-          <ul className="flex flex-col gap-6">
-            {options.map((option) => (
-              <li
-                key={option.link}
-                className="p-2 px-5 text-center rounded-xl hover:bg-primary hover:text-background cursor-pointer"
-                onClick={() => handleNavClick(option.link)}
-              >
-                {option.text}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </aside> */
-}
