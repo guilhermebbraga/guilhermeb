@@ -13,9 +13,9 @@ export default function Projetos() {
       <NavHeader otherStyles="pt-5 px-5" />
 
       <section>
-        <h1 className="ml-7.5 mt-10 text-3xl">Todos os projetos</h1>
+        <h1 className="ml-7.5 mt-10 text-4xl">Todos os projetos</h1>
 
-        <Projects />
+        <Projects title='Projetos:' srOnly/>
       </section>
     </main>
   );

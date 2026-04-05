@@ -66,6 +66,8 @@ export default async function Projeto({ params }: ProjetoProps) {
 
   const project = await projectService.getProjectBySlug(slug);
 
+  if (!project) return notFound();
+
   const {
     name,
     date,
@@ -125,11 +127,11 @@ export default async function Projeto({ params }: ProjetoProps) {
               <Chip style="default" text={stack} />
             </div>
 
-            <ul className="flex gap-2.5 flex-wrap my-5">
+            <div className="flex gap-2.5 flex-wrap my-5">
               {tags.map((tag: string, index: number) => (
                 <Chip icon text={tag} key={index} />
               ))}
-            </ul>
+            </div>
 
             <div className="mt-5 flex gap-5">
               <Button

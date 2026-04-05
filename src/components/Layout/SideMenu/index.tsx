@@ -36,6 +36,7 @@ export default function SideMenu({ options }: SideMenuProps) {
       >
         <button
           onClick={() => setOpen(!open)}
+          aria-label="abrir ou fechar menu"
           className={`
             border border-border-custom h-10 w-10 rounded-xl
             cursor-pointer grid place-items-center absolute top-5 

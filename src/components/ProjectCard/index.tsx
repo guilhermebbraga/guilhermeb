@@ -55,11 +55,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <p className="text-sm text-text-muted">{description}</p>
 
-        <ul className="mt-5 flex flex-wrap gap-2.5">
+        <div className="mt-5 flex flex-wrap gap-2.5">
           {tags.map((tag, index) => (
             <Chip key={index} text={tag} />
           ))}
-        </ul>
+        </div>
 
         <div className="mt-5 flex gap-5">
           <Button
