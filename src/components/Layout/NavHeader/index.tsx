@@ -15,9 +15,10 @@ export default function NavHeader({ otherStyles }: NavHeaderProps) {
     >
       <div
         onClick={() => router.back()}
-        className="grid place-items-center rounded-xl cursor-pointer
-        hover:text-text-muted w-10 h-10 hover:bg-background-dark
-        bg-background-dark/40 backdrop-blur-sm border border-border-custom"
+        className="
+          grid place-items-center rounded-xl cursor-pointer
+          hover:text-text-muted text-sm w-10 h-10 hover:bg-background-dark
+          bg-background-dark/40 backdrop-blur-sm border border-border-custom"
       >
         <IoIosArrowBack />
       </div>

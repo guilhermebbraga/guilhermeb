@@ -15,7 +15,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl">Guilherme Braga</h1>
 
         <h2 className="uppercase text-sm md:text-lg text-text-muted">
-          Estudante de Engenharia de Software & desenvolvedor fullstack
+          Engenheiro de Software & desenvolvedor fullstack
         </h2>
       </div>
     </section>

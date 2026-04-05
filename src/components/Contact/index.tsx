@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 
@@ -37,7 +39,9 @@ export default function Contact() {
       <SectionTitle title="Entre em contato" />
 
       <div className="flex justify-center items-center">
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: -15 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           className="
           flex flex-col gap-5 w-fit p-5 rounded-custom bg-background-dark
           border border-border-custom"
@@ -60,7 +64,7 @@ export default function Contact() {
               </div>
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

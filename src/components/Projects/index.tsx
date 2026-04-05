@@ -8,9 +8,10 @@ interface ProjectsProps {
   title?: string;
   link?: string;
   linkTitle?: string;
+  srOnly?: boolean;
 }
 
-export default async function Projects({ title, link, linkTitle }: ProjectsProps) {
+export default async function Projects({ title, link, linkTitle, srOnly }: ProjectsProps) {
 
   const projectService = new ProjectService()
 
@@ -20,7 +21,7 @@ export default async function Projects({ title, link, linkTitle }: ProjectsProps
     <section id="projects" className="py-10 px-7.5 md:px-15">
       {title && (
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
-          <h2 className="text-3xl font-medium">{title}</h2>
+          <h2 className={`text-3xl font-medium ${srOnly && 'sr-only'}`}>{title}</h2>
 
           {linkTitle && link && (
             <Link

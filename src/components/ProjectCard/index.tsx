@@ -1,4 +1,5 @@
-import backgroundImg from "@/src/assets/backgroundImage.jpg";
+"use client";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import Button from "../Button";
@@ -9,15 +10,20 @@ import Chip from "../Chip";
 import dateFormatter from "@/src/utils/dateFormatter";
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { name, date, repository, description, coverImage, tags, slug } =
+    project;
 
-  const { name, date, repository, description, coverImage, tags, slug } = project
-  
   return (
-    <li className="bg-background-light rounded-custom">
+    <motion.li
+      initial={{ opacity: 0, scale: 0.9, y: -15 }}
+      variants={{ show: { transition: { staggerChildren: 0.2 } } }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      className="bg-background-light rounded-custom"
+    >
       <div className="relative overflow-hidden rounded-t-custom">
         <Image
           src={coverImage}
@@ -49,15 +55,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <p className="text-sm text-text-muted">{description}</p>
 
-        <ul className="mt-5 flex flex-wrap gap-2.5">
-
-          {
-            tags.map((tag, index) => (
-              <Chip key={index} text={tag} />
-            ))
-          }
-         
-        </ul>
+        <div className="mt-5 flex flex-wrap gap-2.5">
+          {tags.map((tag, index) => (
+            <Chip key={index} text={tag} />
+          ))}
+        </div>
 
         <div className="mt-5 flex gap-5">
           <Button
@@ -67,9 +69,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             link={repository}
           />
 
-          <Button text="Ver detalhes" style="primary" icon={<LuEye />} link={`/projetos/${slug}`}/>
+          <Button
+            text="Ver detalhes"
+            style="primary"
+            icon={<LuEye />}
+            link={`/projetos/${slug}`}
+          />
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 }
