@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: ProjetoProps) {
   const { name, description, tags, galery, coverImage } = project;
 
   return {
-    title: `${name} | Guilherme Braga`,
+    title: name,
     description: description.slice(0, 160),
     keywords: tags,
     openGraph: {
