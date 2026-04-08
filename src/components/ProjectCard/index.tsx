@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       initial={{ opacity: 0, scale: 0.9, y: -15 }}
       variants={{ show: { transition: { staggerChildren: 0.2 } } }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      className="bg-background-light rounded-custom"
+      className="bg-background-light rounded-custom h-full flex flex-col"
     >
       <div className="relative overflow-hidden rounded-t-custom">
         <Image
@@ -43,8 +43,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </span>
       </div>
 
-      <div className="p-5">
-        <div className="flex justify-between mb-2.5">
+      <div className="p-5 flex flex-col flex-1">
+        <div className="flex flex-wrap justify-between mb-2.5">
           <h3 className="font-medium text-lg">{name}</h3>
 
           <span className="capitalize flex items-center justify-between gap-1.5 text-sm text-text-muted">
@@ -53,15 +53,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
 
-        <p className="text-sm text-text-muted">{description}</p>
+        <p className="text-sm text-text-muted max-h-15 line-clamp-2">{description}</p>
 
-        <div className="mt-5 flex flex-wrap gap-2.5">
+        <div className="mt-5 flex flex-wrap gap-2.5 mb-5">
           {tags.map((tag, index) => (
-            <Chip key={index} text={tag} />
+            <Chip style="default" key={index} text={tag} />
           ))}
         </div>
 
-        <div className="mt-5 flex gap-5">
+        <div className="mt-auto flex gap-5">
           <Button
             text="Repositório"
             style="bordered"
