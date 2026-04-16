@@ -17,8 +17,8 @@ export default function Contact() {
     {
       icon: IoLogoGithub,
       name: "Github",
-      username: "GuilhermeB-Braga",
-      link: "https://github.com/GuilhermeB-Braga",
+      username: "guilhermebbraga",
+      link: "https://github.com/guilhermebbraga",
     },
     {
       icon: CiMail,
