@@ -10,6 +10,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
   onClick?: () => void;
   reverse?: boolean;
+  otherStyles?: string;
 }
 
 const buttonVariants: {
@@ -30,6 +31,7 @@ export default function Button({
   icon: Icon,
   onClick,
   reverse,
+  otherStyles,
 }: ButtonProps) {
   const router = useRouter();
 
@@ -56,7 +58,7 @@ export default function Button({
 
   return (
     <button
-      className={`${baseStyle} ${buttonVariants[style]} ${reverse && "flex-row-reverse"}`}
+      className={`${baseStyle} ${buttonVariants[style]} ${reverse && "flex-row-reverse"} ${otherStyles}`}
       onClick={handleOnClick}
     >
       {Icon && Icon}
